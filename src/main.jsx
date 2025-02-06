@@ -8,11 +8,23 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import AdminDashboard from './Component/AdminDashboard.jsx';
+import AllUsers from './Component/AllUsers.jsx';
+import Products from './Component/Products.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <AdminDashboard></AdminDashboard>
+    element: <AdminDashboard></AdminDashboard>,
+    children: [
+      {
+        path: "/all-users",
+        element: <AllUsers></AllUsers>
+      },
+      {
+        path: "/products",
+        element: <Products></Products>
+      },
+    ]
   },
 ]);
 
