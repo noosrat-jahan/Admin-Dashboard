@@ -1,26 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Userdata = ({ user, index }) => {
   return (
     <>
-      <tr>
-        <td className="px-3 text-2xl font-medium text-gray-400 dark:text-gray-600">{index + 1}</td>
-        <td className="px-3 py-2">
+      <tr className="border-b border-opacity-20 text-center border-gray-700 bg-gray-100">
+
+        <td className="p-3">
+          <p>{index + 1}</p>
+        </td>
+        <td className="p-3">
           <p>{user.name}</p>
         </td>
-        <td className="px-3 py-2">          
-          <p className="text-gray-400 dark:text-gray-600">{user.email}</p>
+        <td className="p-3">
+          <p>{user.email}</p>
         </td>
-        <td className="px-3 py-2">
+        <td className="p-3">
           <p>{user.phone}</p>
         </td>
-        <td className="px-3 py-2">
+        <td className="p-3">
           <p>{user.address.city}</p>
         </td>
-        <td className="px-3 py-2">         
-          <p className="text-gray-400 dark:text-gray-600">{user.website}</p>
+        <td className="p-3 text-right">
+          <p>{user.website}</p>
         </td>
-        
+        <td className="px-3 py-2">
+          <Link to="/" className="text-purple-800 font-bold dark:text-gray-600">View Details</Link>
+        </td>
       </tr>
     </>
   );

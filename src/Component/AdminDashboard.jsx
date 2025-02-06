@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 
 const AdminDashboard = () => {
   return (
-    <div className="flex gap-10">
+    <div className="flex gap-7">
       <div className="w-3/12 bg-teal-200 min-h-screen ">
         <h1 className="my-10 text-2xl font-bold text-amber-700 underline">
           Admin Dashboard
@@ -22,7 +22,7 @@ const AdminDashboard = () => {
         </ul>
       </div>
 
-      <div className="w-10/12">
+      <div className="w-10/12 mx-auto">
         <Outlet></Outlet>
       </div>
     </div>

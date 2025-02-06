@@ -22,20 +22,21 @@ const AllUsers = () => {
               <col />
               <col />
               <col />
-              <col className="w-5" />
+              <col className="w-24" />
             </colgroup>
             <thead>
-              <tr className="bg-gray-200 w-full">
+              <tr className="bg-gray-300 w-full text-center">
                 <th className="p-3">Serial</th>
                 <th className="p-3">Name</th>
                 <th className="p-3">Email</th>
                 <th className="p-3">Phone</th>
                 <th className="p-3">City Name</th>
                 <th className="p-3">Website</th>
+                <th className="p-3"></th>
                 
               </tr>
             </thead>
-            <tbody className="border-b bg-gray-100  border-gray-700 dark:border-gray-300">
+            <tbody className="border-b bg-gray-50   border-gray-700 dark:border-gray-300">
               {users.map((user, index) => (
                 <Userdata key={user.id} user={user} index={index}></Userdata>
               ))}              
