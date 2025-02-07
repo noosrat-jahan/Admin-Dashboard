@@ -14,6 +14,7 @@ import AdminHome from './Component/AdminHome.jsx';
 import UserDetails from './Component/UserDetails.jsx';
 import AddProducts from './Component/AddProducts.jsx';
 import ProductDetails from './Component/ProductDetails.jsx';
+import Login from './Component/Login.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: "login",
+    element: <Login></Login>
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(

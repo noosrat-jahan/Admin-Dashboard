@@ -41,6 +41,14 @@ const AdminDashboard = () => {
               Products
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="login"
+              className="text-lg text-purple-900 font-bold bg-amber-200 lg:px-10 px-6 py-2 rounded-md"
+            >
+              Login
+            </NavLink>
+          </li>
         </ul>
       </div>
 
