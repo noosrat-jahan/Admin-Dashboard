@@ -12,6 +12,8 @@ import AllUsers from './Component/AllUsers.jsx';
 import Products from './Component/Products.jsx';
 import AdminHome from './Component/AdminHome.jsx';
 import UserDetails from './Component/UserDetails.jsx';
+import AddProducts from './Component/AddProducts.jsx';
+import ProductDetails from './Component/ProductDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,15 @@ const router = createBrowserRouter([
       {
         path: "/products",
         element: <Products></Products>
+      },
+      {
+        path: "/products/:id",
+        element: <ProductDetails></ProductDetails>,
+        loader: ({params})=>fetch(`https://api.restful-api.dev/objects/${params.id}`)
+      },
+      {
+        path: "/add-products",
+        element: <AddProducts></AddProducts>
       },
     ]
   },
