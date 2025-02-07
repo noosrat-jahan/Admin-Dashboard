@@ -26,16 +26,16 @@ const AddProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        if (data.insertedId) {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Added a new Product successfully",
-            showConfirmButton: false,
-            timer: 2000,
-          });
-          navigate("/products");
-        }
+        // if (data.insertedId) {
+        //   Swal.fire({
+        //     position: "center",
+        //     icon: "success",
+        //     title: "Added a new Product successfully",
+        //     showConfirmButton: false,
+        //     timer: 2000,
+        //   });
+        //   navigate("/products");
+        // }
       });
   };
 
