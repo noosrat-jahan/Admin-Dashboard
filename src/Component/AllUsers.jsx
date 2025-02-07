@@ -26,7 +26,7 @@ const AllUsers = () => {
               <col className="w-24" />
             </colgroup>
             <thead>
-              <tr className="bg-gray-300 w-full text-center">
+              <tr className="bg-blue-100 w-full text-center">
                 <th className="p-3">Serial</th>
                 <th className="p-3">Name</th>
                 <th className="p-3">Email</th>
@@ -37,7 +37,7 @@ const AllUsers = () => {
                 
               </tr>
             </thead>
-            <tbody className="border-b bg-gray-50   border-gray-700 dark:border-gray-300">
+            <tbody className="border-b bg-purple-50   border-gray-700 dark:border-gray-300">
               {users.map((user, index) => (
                 <Userdata key={user.id} user={user} index={index}></Userdata>
               ))}              
