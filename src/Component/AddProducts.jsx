@@ -1,7 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const AddProducts = () => {
+
+  const navigate = useNavigate()
+
   const handleAddProduct = (e) => {
     e.preventDefault();
 
@@ -26,16 +30,17 @@ const AddProducts = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        // if (data.insertedId) {
-        //   Swal.fire({
-        //     position: "center",
-        //     icon: "success",
-        //     title: "Added a new Product successfully",
-        //     showConfirmButton: false,
-        //     timer: 2000,
-        //   });
-        //   navigate("/products");
-        // }
+        localStorage.setItem("productId", data.id);
+        if (data.id) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Added a new Product successfully",
+            showConfirmButton: false,
+            timer: 2000,
+          });
+          navigate("/products");
+        }
       });
   };
 

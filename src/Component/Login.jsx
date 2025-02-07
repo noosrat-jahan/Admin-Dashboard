@@ -34,7 +34,12 @@ const Login = () => {
 
   return (
     <div>
-      <div className="card bg-gray-100 mx-auto lg:w-4/12  w-10/12 mt-10 rounded-none  shrink-0 shadow-xl">
+      <div className="flex justify-start ml-5">
+        <button className="text-left mt-5 btn btn-accent text-white">
+          <Link to="/"> ⬅️ Back to dashboard</Link>
+        </button>
+      </div>
+      <div className="card bg-gray-100 mx-auto lg:w-4/12  w-10/12 my-5 rounded-none  shrink-0 shadow-xl">
         <h1 className="text-2xl text-blue-900 font-bold">Sign In</h1>
         <form className="card-body p-0 md:p-4" onSubmit={handleLogin}>
           <div className="form-control">
@@ -70,7 +75,10 @@ const Login = () => {
             <button className="btn btn-primary">Login</button>
           </div>
           <p className="text-sm text-blue-600">
-            Don't have an account? Please <Link to="/register" className="font-bold">Register</Link>
+            Don't have an account? Please{" "}
+            <Link to="/register" className="font-bold">
+              Register
+            </Link>
           </p>
         </form>
       </div>

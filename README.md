@@ -72,7 +72,7 @@ VITE_appId
 Run `npm run dev` to run the project locally.
 
 
-# Links: 
+# Necessary Links:
 
 * Live Link: https://admin-dashboard-828a5.web.app/
 * Users Api Link : https://jsonplaceholder.typicode.com/users
