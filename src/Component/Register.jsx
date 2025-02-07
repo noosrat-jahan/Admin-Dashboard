@@ -1,34 +1,43 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const {createUser} = useContext(AuthContext)
+  const handleRegister = (e) => {
+    e.preventDefault();
 
-    const handleRegister = e =>{
-        e.preventDefault()
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
 
-        const form = e.target 
-        const name = form.name.value
-        const email = form.email.value
-        const password = form.password.value
-
-        createUser(email, password)
-        .then((result) =>{
-            const user = result.user 
-            console.log(user)
-        })
-        .catch(err=>{
-            console.log('Error:', err.message)
-        })
-
-    }
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Registration is successfull",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log("Error:", err.message);
+      });
+  };
   return (
     <div>
-      <div className="card bg-gray-100 mx-auto w-full max-w-sm shrink-0 shadow-xl">
-        <h1>Sign Up</h1>
-        <form className="card-body" onSubmit={handleRegister}>
+     <button className="text-left mt-5 btn btn-accent text-gray-600"><Link to="/">Back to dashboard</Link></button>
+      <div className="card mt-10 bg-gray-50 mx-auto lg:w-4/12  w-10/12 rounded-none shrink-0 shadow-xl">
+        <h1 className="text-2xl text-blue-900 font-bold">Sign Up</h1>
+        <form className="card-body p-0 md:p-4" onSubmit={handleRegister}>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -64,12 +73,13 @@ const Register = () => {
               className="input input-bordered"
               required
             />
-            
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>
-          <p>Already have an account? <Link to="/login">Login</Link></p>
+          <p className="text-sm text-blue-600">
+            Already have an account? <Link to="/login" className="font-bold">Login</Link>
+          </p>
         </form>
       </div>
     </div>
