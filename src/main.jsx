@@ -10,6 +10,8 @@ import {
 import AdminDashboard from './Component/AdminDashboard.jsx';
 import AllUsers from './Component/AllUsers.jsx';
 import Products from './Component/Products.jsx';
+import AdminHome from './Component/AdminHome.jsx';
+import UserDetails from './Component/UserDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,8 +19,17 @@ const router = createBrowserRouter([
     element: <AdminDashboard></AdminDashboard>,
     children: [
       {
+        path: "/",
+        element: <AdminHome></AdminHome>
+      },
+      {
         path: "/all-users",
         element: <AllUsers></AllUsers>
+      },
+      {
+        path: "/all-users/:id",
+        element: <UserDetails></UserDetails>,
+        loader: ({params})=>fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
       },
       {
         path: "/products",

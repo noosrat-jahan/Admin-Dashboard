@@ -25,7 +25,7 @@ const Userdata = ({ user, index }) => {
           <p>{user.website}</p>
         </td>
         <td className="px-3 py-2">
-          <Link to="/" className="text-purple-800 font-bold dark:text-gray-600">View Details</Link>
+          <Link to={`/all-users/${user.id}`} className="text-amber-700 font-bold underline dark:text-gray-600">View Details</Link>
         </td>
       </tr>
     </>

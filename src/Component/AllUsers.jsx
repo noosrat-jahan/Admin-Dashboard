@@ -12,6 +12,7 @@ const AllUsers = () => {
 
   return (
     <div>
+      <h1 className="text-left text-xl my-3 ml-5  text-teal-600 font-bold uppercase">All User Information</h1>
       <div className="container p-2 mx-auto sm:p-4 text-gray-800 ">
         <div className="overflow-x-auto">
           <table className="w-full p-6 text-xs text-left whitespace-nowrap">
